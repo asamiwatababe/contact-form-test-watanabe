@@ -1,0 +1,387 @@
+body {
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.admin__content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.admin__title {
+    text-align: center;
+    font-size: 28px;
+    color: #7a6855;
+}
+
+.admin__subtitle {
+    text-align: center;
+    font-size: 20px;
+    color: #7a6855;
+    margin-bottom: 30px;
+}
+
+.input-date {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 14px;
+    color: #7a6855;
+    border: 1px solid #d5cfc9;
+    background-color: #fff;
+}
+
+input[name="keyword"] {
+    width: 300px;
+}
+
+/* 性別、お問い合わせ、年月日の入力欄 */
+/* ▼マーク付きの select 用ラッパー */
+.selectWrap {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.selectWrap select,
+.selectWrap input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: #7a6855;
+    background-color: #f9f9f9;
+    border: 1px solid #d5cfc9;
+    box-sizing: border-box;
+}
+
+/* ▼のスタイル */
+.selectWrap::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #c4bcb7;
+    pointer-events: none;
+}
+
+/* 検索フォーム内の各項目の横並び幅調整 */
+.admin__search-form input[type="text"],
+.admin__search-form input[type="date"],
+.admin__search-form select {
+    border: 1px solid #ccc;
+    color: #b5aaa1;
+    background-color: #f9f9f9;
+    margin-right: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 5px;
+    white-space: nowrap;
+}
+
+/* カレンダーのアイコンを矢印に*/
+.selectWrap input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #f9f9f9;
+    border: 1px solid #d5cfc9;
+    font-size: 14px;
+    color: #7a6855;
+}
+
+/* Chrome対策: カレンダーアイコンを非表示 */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    /* pointer-events: none; */
+}
+
+/* Firefox対策: カレンダーアイコンを非表示 */
+input[type="date"]::-moz-focus-inner {
+    border: 0;
+}
+
+.admin__search-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 検索・リセットボタン並び */
+.admin__button-area {
+    display: flex;
+    gap: 10px;
+}
+
+/* エクスポートボタン用フォーム（下段に配置） */
+.admin__export-form {
+    margin: 10px 0 20px;
+}
+
+.btn-search,
+.btn-reset,
+.btn-export {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-search {
+    background-color: #7a6855;
+    color: white;
+}
+
+.btn-reset {
+    background-color: #e2dcd6;
+    color: #fff;
+}
+
+.btn-export {
+    background-color: #f5f0eb;
+    color: #7a6855;
+}
+
+.admin__table {
+    width: 100%;
+    border-collapse: collapse;
+    border-color: #f7f7f7;
+    margin-bottom: 20px;
+}
+
+.admin__table th,
+.admin__table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.admin__table th {
+    background-color: #7a6855;
+    color: white;
+}
+
+.btn-detail {
+    padding: 6px 14px;
+    background-color: #fff;
+    color: #7a6855;
+    border: 1px solid #d5cfc9;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+tbody {
+    color: #9b8c7e;
+}
+
+.tr {
+    border-bottom: #9b8c7e;
+}
+
+/* ページネーション */
+.custom-pagination {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding-left: 0;
+}
+
+.custom-pagination li {
+    border: 1px solid #d5cfc9;
+}
+
+.custom-pagination li a,
+.custom-pagination li span {
+    display: block;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #7a6855;
+    font-size: 14px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    text-align: center;
+    font-weight: bold;
+}
+
+.custom-pagination li a:hover {
+    background-color: #eee;
+}
+
+.custom-pagination li.active span {
+    background-color: #7a6855;
+    color: #fff;
+    border: 1px solid #7a6855;
+}
+
+.custom-pagination li.disabled span {
+    color: #ccc;
+    pointer-events: none;
+    border-color: #eee;
+}
+
+.admin__export-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inline-form {
+    display: inline-block;
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    border-color: #baafa6;
+    background: white;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #7a6855;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #7a6855;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-body {
+    margin-bottom: 20px;
+    color: #b1a59a;
+}
+
+.modal-body dt {
+    font-weight: bold;
+    color: #8b7969;
+}
+
+.modal-body dd {
+    margin: 0 0 10px 0;
+}
+
+.modal-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.modal-item {
+    width: calc(50% - 10px);
+}
+
+.modal-item.full {
+    width: 100%;
+}
+
+.modal-table {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-row {
+    display: flex;
+    gap: 20px;
+}
+
+.modal-row dt {
+    width: 160px;
+    font-weight: bold;
+    color: #7a6855;
+    white-space: nowrap;
+}
+
+.modal-row dd {
+    flex: 1;
+    margin: 0;
+    color: #7a6855;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+/* お問い合わせ内容は全幅表示 */
+.modal-row--full {
+    flex-direction: column;
+}
+
+.modal-row--full dt {
+    width: auto;
+    margin-bottom: 6px;
+}
+
+/* 削除ボタン */
+.btn-delete {
+    text-align: center;
+    background-color: #c14a23;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#deleteForm {
+    text-align: center;
+}
+
+/* ログアウトボタン（右上） */
+.logout-area {
+    position: relative;
+    border-bottom: 1px solid #eeeeed;
+}
+
+.logout-button {
+    background: #f6f6f6;
+    border-color: #ece9e6;
+    color: #c4a88d;
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 70px;
+    padding: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    position: absolute;
+}
+
+.logout-button:hover {
+    text-decoration: underline;
+}

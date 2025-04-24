@@ -1,0 +1,45 @@
+.thanks-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    flex-direction: column;
+    background-color: #f9f9f9;
+}
+
+.thanks__background {
+    position: absolute;
+    font-size: 330px;
+    color: rgba(92, 82, 70, 0.05);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    /* z-index: -1; */
+    /* 背景として配置 */
+}
+
+.thanks__button {
+    background-color: #6d5846;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 1;
+    /* 前面に出す */
+}
+
+.thanks__message {
+    font-size: 40px;
+    color: #4e3d30;
+    /* 統一 */
+    margin-bottom: 20px;
+}

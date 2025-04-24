@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Contracts\LogoutResponse;
+use App\Actions\Fortify\CustomLogoutResponse;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,9 +14,9 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
-        //
+        $this->app->bind(LogoutResponse::class, CustomLogoutResponse::class);
     }
 
     /**
